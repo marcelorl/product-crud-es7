@@ -1,0 +1,7 @@
+.env
+node_modules
+.idea
+npm-debug.log
+dist
+.pm2/logs
+.pm2/err-logs

@@ -1,0 +1,24 @@
+[
+  {
+    "model": "delivery_method",
+    "documents": [
+      {
+        "name": "Doc1"
+      },
+      {
+        "name": "Doc2"
+      }
+    ]
+  },
+  {
+    "model": "unit_measurement",
+    "documents": [
+      {
+        "name": "Doc1"
+      },
+      {
+        "name": "Doc2"
+      }
+    ]
+  }
+]

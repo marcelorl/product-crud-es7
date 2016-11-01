@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "api",
+    "script": "dist/bundle.js",
+    "watch": true,
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "env_production": {
+      "NODE_ENV": "production"
+    },
+    "out_file": ".pm2/logs",
+    "error_file": ".pm2/err-logs"
+  }]
+}
