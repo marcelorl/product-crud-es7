@@ -41,4 +41,5 @@ app
 
 app.use(componentsApi.routes())
 
+console.log('PORTTTTTT', process.env.HTTP_PORT)
 app.listen(process.env.HTTP_PORT)

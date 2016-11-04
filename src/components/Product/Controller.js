@@ -1,21 +1,20 @@
 import Model from './Model'
-import request from 'request';
+import request from 'request'
 
-//async function all (ctx) {
-  /*
-  * let page = this.query.page || 1;
-  * let limit = 10;
-  * let skip = (page-1)*limit;
-  * this.body = yield UserModel.find().skip(skip).limit(limit);
+// async function all (ctx) {
+  /** let page = this.query.page || 1
+  * let limit = 10
+  * let skip = (page-1)*limit
+  * this.body = yield UserModel.find().skip(skip).limit(limit)
   * */
 
-  /*ctx.body = await Model.find()
+  /* ctx.body = await Model.find()
     .populate('tags', 'name')
     .populate('delivery_method', 'name')
     .populate('unit_measurement', 'name')
 
-  return ctx.body*/
-//}
+  return ctx.body */
+// }
 
 async function create (ctx) {
   let requestBody = ctx.request.body
@@ -47,20 +46,12 @@ async function patch (ctx) {
 async function remove (ctx) {
   let requestBody = ctx.request.body
 
-  ctx.body = await Model.remove({_id: ctx.params.id, store_id: requestBody.store_id}, err => {
-    if (!err) {
-      let Rabbit = new RabbitMq()
-      Rabbit.send(JSON.stringify({
-        action: 'product-delete',
-        data: { id: ctx.params.id }
-      }), { queue: 'images' })
-    }
-  })
+  ctx.body = await Model.remove({_id: ctx.params.id, store_id: requestBody.store_id}, err => {})
 
   return ctx.body
 }
 
-function fetchProducts() {
+function fetchProducts () {
   return new Promise(function(resolve, reject) {
     request('http://localhost:3000/api/products', function(error, response, body) {
       if (error) return reject(error)
@@ -69,7 +60,7 @@ function fetchProducts() {
   })
 }
 
-async function all(ctx) {
+async function all (ctx) {
   try {
     return ctx.body = await fetchProducts()
   } catch(err) {
