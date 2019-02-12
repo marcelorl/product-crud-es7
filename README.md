@@ -1,5 +1,7 @@
 # Product backend service
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/marcelorl/product-crud-es7.svg)](https://greenkeeper.io/)
+
 ## Installation
 
  - `npm i --silent --progress=false`
